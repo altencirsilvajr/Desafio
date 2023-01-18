@@ -74,10 +74,11 @@ export function Home() {
         <FlatList showsVerticalScrollIndicator ={false}
          
           data={participants}
-          keyExtractor={item => item}
+          keyExtractor={item => String(item)}
           renderItem={({ item }) => (
             <Participants
-                name = {item} 
+                key={String (item)}
+                name = {String(item)} 
                 onRemove ={()=> handleParticipantRemove(`${item}`)}/>
           )}
         ListEmptyComponent={() => (
