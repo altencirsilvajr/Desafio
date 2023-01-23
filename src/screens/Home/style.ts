@@ -2,18 +2,22 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     container:{
         flex:1,
-        backgroundColor:'#ffd700',
+        backgroundColor:'#A020F0',
         padding:45
     },
     eventTitle:{
-        fontSize:25,
+        fontSize:30,
         fontWeight:"bold",
         marginTop:40,
-        color:'#008000',
+        textAlign:"center",
+        flexDirection: "row",
+        color: "#000000"
     },
     eventDate:{
+        marginTop:25,
         fontSize: 15,
-        color:'#008000',
+        textAlign:"center",
+        color: "#000000"
     },
     input:{
         backgroundColor: '#fefbd8',
@@ -23,7 +27,7 @@ export const styles = StyleSheet.create({
         height: 50,
         padding: 8,
         fontSize: 15,
-        color:'#008000',
+        color:'#000000',
 
     },
     buttonText:{
@@ -46,7 +50,7 @@ export const styles = StyleSheet.create({
     },
     listEmpty:{
         textAlign: "center",
-        color:'#008000',
+        color:'#000000',
         fontSize: 25,
     }
 

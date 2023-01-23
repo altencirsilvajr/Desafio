@@ -6,9 +6,12 @@ import { styles } from "./style";
 
 import { Participants } from "../../components/Participants";
 
+
 export function Home() {
   const [participantName , setParticipantName] = useState('');
   const [participants , setParticipants] = useState <String[]> ([]);
+  const [myText, setMyText] = useState('');
+  const [myData,setMyData] = useState('');
 
     function handleParticipantAdd() {
       
@@ -39,17 +42,29 @@ export function Home() {
         style: "cancel"
       }
     ])
-
   }
-  return(
-    <View style={styles.container}>
-        <Text style={styles.eventTitle}>
-          Nome do Evento
-        </Text>
 
-        <Text style={styles.eventDate}>
-          27 de Janeiro de 2023.
-        </Text>
+  return(
+    <View style={styles.container}> 
+        <TextInput 
+            maxLength={40}
+            style={styles.eventTitle}
+            placeholder = "Nome do Evento"
+            placeholderTextColor= "#008000"
+            onChangeText={setMyText}
+            value ={myText}
+            multiline={true}
+          />
+
+        <TextInput
+            maxLength={6}
+            style={styles.eventDate}
+            placeholder = "Escolha a data específica: D/M/A"
+            placeholderTextColor= "#008000"
+            onChangeText={setMyData}
+            value ={myData}
+            keyboardType = "numeric"
+          />
 
         <View style={styles.form}>
 
