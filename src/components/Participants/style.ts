@@ -7,11 +7,12 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         marginBottom: 10,
+        borderRadius:20,
     },
     name:{
         color: '#FFF', 
         flex:1,
-        marginLeft:10,
+        marginLeft:15,
         fontSize:20,
     },
     buttonText:{
@@ -24,5 +25,6 @@ export const styles = StyleSheet.create({
         backgroundColor: '#E23C44',
         alignItems:"center",
         justifyContent:"center",
+        borderRadius: 10,
     }
 })

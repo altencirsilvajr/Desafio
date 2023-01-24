@@ -1,10 +1,11 @@
 import React, {useState} from "react";
 
-import { View , Text, TextInput, TouchableOpacity, FlatList, Alert } from 'react-native';
+import { View , Text, TextInput, TouchableOpacity, FlatList, Alert} from 'react-native';
 
 import { styles } from "./style";
 
 import { Participants } from "../../components/Participants";
+
 
 
 export function Home() {
@@ -46,26 +47,27 @@ export function Home() {
 
   return(
     <View style={styles.container}> 
+
         <TextInput 
             maxLength={40}
             style={styles.eventTitle}
             placeholder = "Nome do Evento"
-            placeholderTextColor= "#008000"
+            placeholderTextColor= "#000000"
             onChangeText={setMyText}
             value ={myText}
             multiline={true}
           />
 
-        <TextInput
-            maxLength={6}
+        <TextInput 
+            maxLength={8}
             style={styles.eventDate}
             placeholder = "Escolha a data específica: D/M/A"
-            placeholderTextColor= "#008000"
+            placeholderTextColor= "#000000"
             onChangeText={setMyData}
             value ={myData}
             keyboardType = "numeric"
           />
-
+        
         <View style={styles.form}>
 
           <TextInput 
@@ -98,7 +100,7 @@ export function Home() {
           )}
         ListEmptyComponent={() => (
           <Text style ={styles.listEmpty}>
-            Nenhum participante adicionado ao evento!!!
+            (Sem participantes)
           </Text>
         )}  
         />

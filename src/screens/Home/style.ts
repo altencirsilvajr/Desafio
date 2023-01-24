@@ -1,14 +1,16 @@
 import { StyleSheet } from "react-native";
+
 export const styles = StyleSheet.create({
+    
     container:{
         flex:1,
-        backgroundColor:'#A020F0',
+        backgroundColor:'#3377ff',
         padding:45
     },
     eventTitle:{
         fontSize:30,
         fontWeight:"bold",
-        marginTop:40,
+        marginTop:20,
         textAlign:"center",
         flexDirection: "row",
         color: "#000000"
@@ -23,7 +25,7 @@ export const styles = StyleSheet.create({
         backgroundColor: '#fefbd8',
         borderRadius: 12,
         flex:1,
-        marginRight: 8,
+        marginRight: 10,
         height: 50,
         padding: 8,
         fontSize: 15,
@@ -46,7 +48,7 @@ export const styles = StyleSheet.create({
         width:'100%',
         flexDirection: 'row',
         marginTop:25,
-        marginBottom:35,
+        marginBottom:28,
     },
     listEmpty:{
         textAlign: "center",
