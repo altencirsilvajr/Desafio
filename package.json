@@ -11,14 +11,14 @@
     "expo": "^47.0.0",
     "react": "18.1.0",
     "react-native": "0.70.5",
-    "react-native-dark-mode": "^0.2.2",
-    "react-native-date-input": "^1.0.11"
+    "react-native-datepicker": "^1.7.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@babel/runtime": "^7.12.5",
     "@types/react": "~18.0.24",
     "@types/react-native": "~0.70.6",
+    "@types/react-native-datepicker": "^1.7.1",
     "typescript": "^4.6.3"
   }
 }

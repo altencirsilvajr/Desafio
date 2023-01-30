@@ -4,7 +4,12 @@ export const styles = StyleSheet.create({
     
     container:{
         flex:1,
-        backgroundColor:'#3377ff',
+        backgroundColor:'#0000cc',
+        padding:45
+    },
+    containerDark:{
+        flex:1,
+        backgroundColor:'#333333',
         padding:45
     },
     eventTitle:{
@@ -13,20 +18,14 @@ export const styles = StyleSheet.create({
         marginTop:20,
         textAlign:"center",
         flexDirection: "row",
-        color: "#000000"
-    },
-    eventDate:{
-        marginTop:25,
-        fontSize: 15,
-        textAlign:"center",
-        color: "#000000"
+        color: "#ffffff"
     },
     input:{
         backgroundColor: '#fefbd8',
         borderRadius: 12,
         flex:1,
         marginRight: 10,
-        height: 50,
+        height: 55,
         padding: 8,
         fontSize: 15,
         color:'#000000',
@@ -44,6 +43,15 @@ export const styles = StyleSheet.create({
         alignItems:"center",
         justifyContent:"center",
     },
+    buttonDarkMode:{
+        height:30,
+        width:100,
+        marginTop:30,
+        borderRadius:20,
+        backgroundColor: '#e6e6ff',
+        alignItems:"center",
+        justifyContent: "center",
+    },
     form:{
         width:'100%',
         flexDirection: 'row',
@@ -52,7 +60,7 @@ export const styles = StyleSheet.create({
     },
     listEmpty:{
         textAlign: "center",
-        color:'#000000',
+        color:'#ffffff',
         fontSize: 25,
     }
 

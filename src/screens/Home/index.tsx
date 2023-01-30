@@ -8,11 +8,13 @@ import { Participants } from "../../components/Participants";
 
 
 
+
 export function Home() {
   const [participantName , setParticipantName] = useState('');
   const [participants , setParticipants] = useState <String[]> ([]);
   const [myText, setMyText] = useState('');
-  const [myData,setMyData] = useState('');
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
 
     function handleParticipantAdd() {
       
@@ -31,48 +33,46 @@ export function Home() {
     }
     
 
-  function handleParticipantRemove(name: string) {
-    Alert.alert("Remover",`Deseja realmente remover: ${name}?`,
-    [
-      {
-        text: "SIM",
-        onPress: () => setParticipants(previewState => previewState.filter(participants => participants !== name))
-      },
-      {
-        text:"NÃO",
-        style: "cancel"
-      }
-    ])
-  }
+    function handleParticipantRemove(name: string) {
+      Alert.alert("Remover",`Deseja realmente remover: ${name}?`,
+      [
+        {
+          text: "SIM",
+          onPress: () => setParticipants(previewState => previewState.filter(participants => participants !== name))
+        },
+        {
+          text:"NÃO",
+          style: "cancel"
+        }
+      ])
+    }
 
+    function toggleDarkMode() {
+      setIsDarkMode(!isDarkMode);
+    }
   return(
-    <View style={styles.container}> 
+    <View style={[styles.container,isDarkMode ? styles.containerDark:styles.container]}> 
 
         <TextInput 
             maxLength={40}
             style={styles.eventTitle}
             placeholder = "Nome do Evento"
-            placeholderTextColor= "#000000"
+            placeholderTextColor= "#ffffff"
             onChangeText={setMyText}
             value ={myText}
             multiline={true}
           />
+        <TouchableOpacity onPress={toggleDarkMode} style={styles.buttonDarkMode}>
+          <Text>{isDarkMode ? "Light Mode" : "Dark Mode"}</Text>
+        </TouchableOpacity>
 
-        <TextInput 
-            maxLength={8}
-            style={styles.eventDate}
-            placeholder = "Escolha a data específica: D/M/A"
-            placeholderTextColor= "#000000"
-            onChangeText={setMyData}
-            value ={myData}
-            keyboardType = "numeric"
-          />
+
         
         <View style={styles.form}>
 
           <TextInput 
             style={styles.input}
-            placeholder = "Nome do participante"
+            placeholder = "Insira o participante aqui"
             placeholderTextColor= "#6B6B6B"
             onChangeText={setParticipantName}
             value ={participantName}
