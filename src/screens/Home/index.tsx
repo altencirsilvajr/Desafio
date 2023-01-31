@@ -1,44 +1,43 @@
 import React, {useState} from "react";
 
-import { View , Text, TextInput, TouchableOpacity, FlatList, Alert} from 'react-native';
+import { View , Text, TextInput, TouchableOpacity, FlatList, Alert, Button} from 'react-native';
 
 import { styles } from "./style";
 
-import { Participants } from "../../components/Participants";
-
+import { Tarefas} from "../../components/Tarefas"
 
 
 
 export function Home() {
-  const [participantName , setParticipantName] = useState('');
-  const [participants , setParticipants] = useState <String[]> ([]);
+  const [taskName , setTaskName] = useState('');
+  const [tasks , setTask] = useState <String[]> ([]);
   const [myText, setMyText] = useState('');
   const [isDarkMode, setIsDarkMode] = useState(false);
 
 
-    function handleParticipantAdd() {
+    function handleTaskAdd() {
       
-      const participantsLowerCase = participants.map(participant => participant.toLowerCase())
-      if (participantsLowerCase.includes(participantName.toLowerCase())) {
-        return Alert.alert("Participante existe", "Já existe um participante na lista com esse nome.");
+      const taskLowerCase = tasks.map(task => task.toLowerCase())
+      if (taskLowerCase.includes(taskName.toLowerCase())) {
+        return Alert.alert("Tarefa existe", "Essa tarefa já existe na lista");
       }
       
-      if (participantName.length === 0) {
-        return Alert.alert("Espaço vazio", "Nenhum valor foi digitado");
+      if (taskName.length === 0) {
+        return Alert.alert("Espaço vazio", "Nenhuma tarefa foi digitada");
 
       }
-      setParticipants( previewState => [...previewState ,participantName]);
-      setParticipantName ('');
+      setTask( previewState => [...previewState ,taskName]);
+      setTaskName ('');
 
     }
     
 
-    function handleParticipantRemove(name: string) {
-      Alert.alert("Remover",`Deseja realmente remover: ${name}?`,
+    function handleTaskRemove(name: string) {
+      Alert.alert("Remover",`Remover tarefa: ${name}?`,
       [
         {
           text: "SIM",
-          onPress: () => setParticipants(previewState => previewState.filter(participants => participants !== name))
+          onPress: () => setTask(previewState => previewState.filter(task => task !== name))
         },
         {
           text:"NÃO",
@@ -56,31 +55,30 @@ export function Home() {
         <TextInput 
             maxLength={40}
             style={styles.eventTitle}
-            placeholder = "Nome do Evento"
+            placeholder = "Insira uma tarefa:"
             placeholderTextColor= "#ffffff"
             onChangeText={setMyText}
             value ={myText}
             multiline={true}
           />
         <TouchableOpacity onPress={toggleDarkMode} style={styles.buttonDarkMode}>
-          <Text>{isDarkMode ? "Light Mode" : "Dark Mode"}</Text>
+          <Text>{isDarkMode ? "Modo Claro" : "Modo Escuro"}</Text>
         </TouchableOpacity>
 
 
-        
         <View style={styles.form}>
 
           <TextInput 
             style={styles.input}
-            placeholder = "Insira o participante aqui"
+            placeholder = "Insira a tarefa aqui"
             placeholderTextColor= "#6B6B6B"
-            onChangeText={setParticipantName}
-            value ={participantName}
+            onChangeText={setTaskName}
+            value ={taskName}
           />
           
           <TouchableOpacity 
             style={styles.button} 
-            onPress={handleParticipantAdd}>
+            onPress={handleTaskAdd}>
               <Text style={styles.buttonText}>
               +
             </Text>
@@ -90,17 +88,17 @@ export function Home() {
         
         <FlatList showsVerticalScrollIndicator ={false}
          
-          data={participants}
+          data={tasks}
           keyExtractor={item => String(item)}
           renderItem={({ item }) => (
-            <Participants
+            <Tarefas
                 key={String (item)}
                 name = {String(item)} 
-                onRemove ={()=> handleParticipantRemove(`${item}`)}/>
+                onRemove ={()=> handleTaskRemove(`${item}`)}/>
           )}
         ListEmptyComponent={() => (
           <Text style ={styles.listEmpty}>
-            (Sem participantes)
+            (0 Tarefas)
           </Text>
         )}  
         />

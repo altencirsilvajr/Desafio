@@ -1,6 +1,7 @@
 import { Text,View, TouchableOpacity} from "react-native";
 import { styles } from "./style";
 import React from 'react'
+import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 
 type Props = {
@@ -8,11 +9,18 @@ type Props = {
   onRemove: () => void;
 }
 
-export function Participants({name, onRemove}: Props){
+export function Tarefas({name, onRemove}: Props){
     return(
         <View style = {styles.container}>
             <Text style ={styles.name}>
-              {name}
+            <BouncyCheckbox
+                size={25}
+                fillColor="blue"
+                unfillColor="#FFFFFF"
+                text= {name}
+                onPress={(_isChecked: boolean) => {}}            
+            />
+            
             </Text>
 
             <TouchableOpacity 
