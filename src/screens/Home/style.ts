@@ -4,22 +4,19 @@ export const styles = StyleSheet.create({
     
     container:{
         flex:1,
-        backgroundColor:'#4da6ff',
+        backgroundColor:'#0066ff',
         padding:45
     },
     containerDark:{
         flex:1,
-        backgroundColor:'#000066',
+        backgroundColor:'#000000',
         padding:45
     },
-    eventTitle:{
-        fontSize:30,
-        fontWeight:"bold",
-        marginTop:20,
-        textAlign:"center",
-        flexDirection: "row",
-        color: "#ffffff"
-    },
+    logo: {
+        resizeMode: 'contain',
+        width:300,
+        height:50,
+      },
     input:{
         backgroundColor: '#fefbd8',
         borderRadius: 12,
@@ -31,17 +28,9 @@ export const styles = StyleSheet.create({
         color:'#000000',
 
     },
-    buttonText:{
-        color: '#FFF',
-        fontSize:35,
-    },
-    button:{
-        height:50,
-        width:50,
-        borderRadius:20,
-        backgroundColor: '#31CF67',
-        alignItems:"center",
-        justifyContent:"center",
+    buttonTask:{
+        height:60,
+        width:70,
     },
     buttonDarkMode:{
         height:30,
@@ -58,10 +47,10 @@ export const styles = StyleSheet.create({
         marginTop:25,
         marginBottom:28,
     },
-    listEmpty:{
-        textAlign: "center",
-        color:'#ffffff',
-        fontSize: 25,
-    }
+    noTasks:{
+        resizeMode: 'contain',
+        width:300,
+        height:85,
+    },
 
 })

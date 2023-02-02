@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-import { View , Text, TextInput, TouchableOpacity, FlatList, Alert, Button} from 'react-native';
+import { View , Text, TextInput, TouchableOpacity, FlatList, Alert, Image} from 'react-native';
 
 import { styles } from "./style";
 
@@ -11,8 +11,8 @@ import { Tarefas} from "../../components/Tarefas"
 export function Home() {
   const [taskName , setTaskName] = useState('');
   const [tasks , setTask] = useState <String[]> ([]);
-  const [myText, setMyText] = useState('');
   const [isDarkMode, setIsDarkMode] = useState(false);
+
 
 
     function handleTaskAdd() {
@@ -50,17 +50,11 @@ export function Home() {
       setIsDarkMode(!isDarkMode);
     }
   return(
-    <View style={[styles.container,isDarkMode ? styles.containerDark:styles.container]}> 
-
-        <TextInput 
-            maxLength={40}
-            style={styles.eventTitle}
-            placeholder = "Insira uma tarefa:"
-            placeholderTextColor= "#ffffff"
-            onChangeText={setMyText}
-            value ={myText}
-            multiline={true}
-          />
+    <View style={[styles.container,isDarkMode ? styles.containerDark:styles.container]}>
+        <Image
+        style={styles.logo}
+        source={require('../../components/icons/logo.png')}
+        /> 
         <TouchableOpacity onPress={toggleDarkMode} style={styles.buttonDarkMode}>
           <Text>{isDarkMode ? "Modo Claro" : "Modo Escuro"}</Text>
         </TouchableOpacity>
@@ -76,12 +70,12 @@ export function Home() {
             value ={taskName}
           />
           
-          <TouchableOpacity 
-            style={styles.button} 
+          <TouchableOpacity  
             onPress={handleTaskAdd}>
-              <Text style={styles.buttonText}>
-              +
-            </Text>
+              <Image
+                style={styles.buttonTask}
+                source={require('../../components/icons/send.png')}
+              />
           </TouchableOpacity>
     
         </View>
@@ -97,9 +91,10 @@ export function Home() {
                 onRemove ={()=> handleTaskRemove(`${item}`)}/>
           )}
         ListEmptyComponent={() => (
-          <Text style ={styles.listEmpty}>
-            (0 Tarefas)
-          </Text>
+            <Image
+              style={styles.noTasks}
+              source={require('../../components/icons/list.png')}
+            />
         )}  
         />
     </View>
