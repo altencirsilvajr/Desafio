@@ -17,9 +17,9 @@ export function Tarefas({name, onRemove}: Props){
                 size={25}
                 fillColor="green"
                 unfillColor="#FFFFFF"
-                text= {name}
                 onPress={(_isChecked: boolean) => {}}            
             />
+            {name}
             </Text>
 
             <TouchableOpacity 

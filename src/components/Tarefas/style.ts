@@ -10,13 +10,13 @@ export const styles = StyleSheet.create({
         borderRadius:20,
     },
     name:{
-        color: '#FFF', 
         flex:1,
         marginLeft:15,
+        color:'#000000',
     },
     buttonTrash:{
         resizeMode: 'contain',
         height:75,
-        width:60,
+        width:50,
     }
 })

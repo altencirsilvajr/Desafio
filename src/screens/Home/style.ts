@@ -26,7 +26,6 @@ export const styles = StyleSheet.create({
         padding: 8,
         fontSize: 15,
         color:'#000000',
-
     },
     buttonTask:{
         height:60,
