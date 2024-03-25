@@ -1,5 +1,5 @@
 
-![Logo do projeto](https://cdn.dribbble.com/userupload/3875671/file/original-e7509c33cfcda0d2f3a6f6892f7b85fb.png?resize=400x0)
+![Logo do projeto](![image](https://github.com/altencirsilvajr/Desafio/assets/63504772/a7eeac64-7d21-4b9c-a0b2-0fa334433457))
 
 # ToDoList
 
