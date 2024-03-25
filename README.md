@@ -1,5 +1,5 @@
 
-![Logo do projeto](![image](https://github.com/altencirsilvajr/Desafio/assets/63504772/a7eeac64-7d21-4b9c-a0b2-0fa334433457))
+![Logo do projeto](https://github.com/altencirsilvajr/Desafio/assets/63504772/a7eeac64-7d21-4b9c-a0b2-0fa334433457)
 
 # ToDoList
 
